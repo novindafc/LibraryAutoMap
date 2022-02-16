@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryAutoMapper", "LibraryAutoMapper\LibraryAutoMapper.csproj", "{852C7002-779D-4DD1-8E8C-085696C6059F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestLibrary", "UnitTestLibrary\UnitTestLibrary.csproj", "{747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{852C7002-779D-4DD1-8E8C-085696C6059F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852C7002-779D-4DD1-8E8C-085696C6059F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852C7002-779D-4DD1-8E8C-085696C6059F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852C7002-779D-4DD1-8E8C-085696C6059F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
