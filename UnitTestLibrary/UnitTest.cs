@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using AutoMapper;
 using LibraryAutoMapper.Controllers;
 using LibraryAutoMapper.DbContext;
@@ -37,10 +38,11 @@ namespace UnitTestLibrary
             var response = a.Result.Result as OkObjectResult;
             Assert.True(response.StatusCode is 200);
             // var responseData = response.Value as JsonResult;
+            //
             // var dataBook = responseData.Value as dynamic;
             // List<BookDto> b = dataBook.data as List<BookDto>;
-            // List<BookDto> b = responseData.Value as List<BookDto>;
-            // Assert.Equal("succes", dataBook.status); 
+            // List<BookDto> c = responseData.Value as List<BookDto>;
+            // Assert.Equal(3, dataBook.Count); 
             // Assert.Empty(dataBook.data);
         }
         
@@ -55,10 +57,21 @@ namespace UnitTestLibrary
             var a = book.GetBookById(id);
             var response = a.Result.Result as OkObjectResult;
             Assert.True(response.StatusCode is 200);
-            // _bookService = new BookRepositoryService(_dbContext, _mapper);
-            // var result  =_bookService.GetBookById(id);
-            //
-            // Assert.Equal(expTitle, result.Result.Title);
+
+        }
+        
+        
+        
+        [Theory]
+        [InlineData(8)]
+        [InlineData(9)]
+        public void GetUnavailableBookDataById_NotFound(int id)
+        {
+            _bookService = new BookRepositoryServiceTest();
+            BookController book = new BookController(_bookService);
+            var a = book.GetBookById(id);
+            var response = a.Result.Result as OkObjectResult;
+            Assert.True(response.StatusCode is 200);
 
         }
         
@@ -94,7 +107,31 @@ namespace UnitTestLibrary
         [Theory]
         [InlineData(2,"Laskar Pelangi", "Andrea Hirata", "B007", 5, 5)]
         [InlineData(3, "Akar", "Dee Lestari", "A011", 3, 3)]
-        public void EditBookData_RowOfData(int id, string title, string author, string position, int qty, int remain)
+        public void EditAvailableBookData_RowOfData(int id, string title, string author, string position, int qty, int remain)
+        {
+            _bookService = new BookRepositoryServiceTest();
+            BookController book = new BookController(_bookService);
+            BookDto bd = new BookDto()
+            {
+                Id = id,
+                Title = title,
+                Author = author,
+                Position = position,
+                Qty = qty,
+                Remains = remain
+                
+            };
+            
+            var result  = book.EditBook(bd);
+            var response = result.Result as OkObjectResult;
+            Assert.True(response.StatusCode is 200);
+            // Assert.Equal(expected, result.Result.Title);
+
+        }
+        [Theory]
+        [InlineData(9,"Laskar Pelangi", "Andrea Hirata", "B007", 5, 5)]
+        [InlineData(8, "Akar", "Dee Lestari", "A011", 3, 3)]
+        public void EditUnavailableBookData_NotFound(int id, string title, string author, string position, int qty, int remain)
         {
             _bookService = new BookRepositoryServiceTest();
             BookController book = new BookController(_bookService);
@@ -119,7 +156,7 @@ namespace UnitTestLibrary
         [Theory]
         [InlineData(1)]
         [InlineData(2)]
-        public void DeleteBookData_RowOfData(int id)
+        public void DeleteAvailableBookData_RowOfData(int id)
         {
        
             _bookService = new BookRepositoryServiceTest();
@@ -132,7 +169,21 @@ namespace UnitTestLibrary
 
         }
         
-        
+        [Theory]
+        [InlineData(8)]
+        [InlineData(9)]
+        public void DeleteUnavailableBookData_NotFound(int id)
+        {
+       
+            _bookService = new BookRepositoryServiceTest();
+            BookController book = new BookController(_bookService);
+            var result  = book.DeleteBook(id);
+            var response = result.Result.Result as OkObjectResult;
+            Assert.True(response.StatusCode is 200);
+            
+            // Assert.Equal(id, result.Result.Id);
+
+        }
         [Fact]
         public void GetAllAvailableBookLogData_ListofModel()
         {
@@ -158,10 +209,50 @@ namespace UnitTestLibrary
         }
         
         [Theory]
+        [InlineData(8)]
+        [InlineData(9)]
+        public void GetUnavailableBookLogDataById_NotFound(int id)
+        {
+            _bookLogService = new BookLogRepositoryServiceTest();
+            BookLogController booklog = new BookLogController(_bookLogService);
+            var a = booklog.GetBookLogById(id);
+            var response = a.Result as OkObjectResult;
+            Assert.True(response is null);
+
+        }
+        
+        
+        [Theory]
         [InlineData(4, 1, 2, "on process")]
         [InlineData(5, 2, 3, "on process")]
         [InlineData(6, 3, 1,"on process")]
-        public void AddBookLogData_RowOfData(int id, int idbook, int idmember, string status)
+        public void AddBookLogDataAvailableBook_RowOfData(int id, int idbook, int idmember, string status)
+        {
+            _bookLogService = new BookLogRepositoryServiceTest();
+            BookLogController booklog = new BookLogController(_bookLogService);
+            BookLogDto bd = new BookLogDto()
+            {
+                Id = id,
+                StartTime = DateTime.Today,
+                EndTime = DateTime.Today.AddDays(4),
+                BookId = idbook,
+                MemberId = idmember,
+                Status = status
+                
+            };
+            
+            var result  = booklog.AddBookLog(bd);
+            // var a = booklog.GetBookLog();
+            var response = result.Result as OkObjectResult;
+            Assert.True(response.StatusCode is 200);
+            // Assert.Equal(expected, result.Id);
+
+        }
+        [Theory]
+        [InlineData(4, 9, 2, "on process")]
+        [InlineData(5, 8, 3, "on process")]
+        [InlineData(6, 7, 1,"on process")]
+        public void AddBookLogDataBookUnavailableBook_NotFound(int id, int idbook, int idmember, string status)
         {
             _bookLogService = new BookLogRepositoryServiceTest();
             BookLogController booklog = new BookLogController(_bookLogService);
@@ -185,9 +276,9 @@ namespace UnitTestLibrary
         }
         
         [Theory]
-        // [InlineData(2,1, 2, "on process")]
+        [InlineData(2,1, 2, "on process")]
         [InlineData(3,2, 3, "on process")]
-        public void EditBookLogData_RowOfData(int id, int idbook, int idmember, string status)
+        public void EditAvailableBookLogData_RowOfData(int id, int idbook, int idmember, string status)
         {
             
             _bookLogService = new BookLogRepositoryServiceTest();
@@ -210,12 +301,53 @@ namespace UnitTestLibrary
 
         }
         
+        //
+        // [Theory]
+        // [InlineData(5,1, 2, "on process")]
+        // [InlineData(7,2, 3, "on process")]
+        // public void EditUnavailableBookLogData_NotFound(int id, int idbook, int idmember, string status)
+        // {
+        //     
+        //     _bookLogService = new BookLogRepositoryServiceTest();
+        //     BookLogController booklog = new BookLogController(_bookLogService);
+        //     BookLogDto bd = new BookLogDto()
+        //     {
+        //         Id = id,
+        //         StartTime = DateTime.Today,
+        //         EndTime = DateTime.Today.AddDays(4),
+        //         BookId = idbook,
+        //         MemberId = idmember,
+        //         Status = status
+        //         
+        //     };
+        //     
+        //     var result  = booklog.EditBookLog(bd);
+        //     var response = result.Result as OkObjectResult;
+        //     Assert.True(response.StatusCode is null);
+        //     // Assert.Equal(expected, result.Result.BookId);
+        //
+        // }
+        //
         [Theory]
         [InlineData(2)]
         [InlineData(3)]
-        public void DeleteBookLogData_RowOfData(int id)
+        public void DeleteAvailableBookLogData_RowOfData(int id)
         {
          
+            _bookLogService = new BookLogRepositoryServiceTest();
+            BookLogController booklog = new BookLogController(_bookLogService);
+            var result  = booklog.DeleteBookLog(id);
+            var response = result.Result as OkObjectResult;
+            Assert.True(response.StatusCode is 200);
+            // Assert.Equal(id, result.Result.Id);
+
+        }
+        
+        [Theory]
+        [InlineData(6)]
+        [InlineData(8)]
+        public void DeleteUnvailableBookLogData_NotFound(int id)
+        {
             _bookLogService = new BookLogRepositoryServiceTest();
             BookLogController booklog = new BookLogController(_bookLogService);
             var result  = booklog.DeleteBookLog(id);
@@ -250,6 +382,20 @@ namespace UnitTestLibrary
         }
         
         [Theory]
+        [InlineData(8)]
+        [InlineData(9)]
+        public void GetUnvailableMemberLogDataById_NotFound(int id)
+        {
+            _memberService = new MemberRepositoryServiceTest();
+            MemberController member = new MemberController(_memberService);
+            var a = member.GetMemberById(id);
+            var response = a.Result.Result as OkObjectResult;
+            Assert.True(response.StatusCode is 200);
+
+        }
+        
+        
+        [Theory]
         [InlineData(4,"Tanjiro", "M", "08122545645", "student","tanjiro@gmail.com",1)]
         [InlineData(5,"Zenitsu", "M", "08565432645","student","zenitsu@gmail.com",2)]
         [InlineData(6,"Nezuko", "F", "085656545645","student","nezuko@gmail.com",3)]
@@ -280,7 +426,7 @@ namespace UnitTestLibrary
         [Theory]
         [InlineData(2,"Levi", "M", "0812545645", "student","tanjiro@gmail.com")]
         [InlineData(3,"Eren", "M", "08199545645", "student","tanjiro@gmail.com")]
-        public void EditMemberData_RowOfData(int id, string name, string gender, string phone, string job, string email)
+        public void EditAvailableMemberData_RowOfData(int id, string name, string gender, string phone, string job, string email)
         {
             _memberService = new MemberRepositoryServiceTest();
             MemberController member = new MemberController(_memberService);
@@ -303,9 +449,48 @@ namespace UnitTestLibrary
         }
         
         [Theory]
+        [InlineData(7,"Levi", "M", "0812545645", "student","tanjiro@gmail.com")]
+        [InlineData(6,"Eren", "M", "08199545645", "student","tanjiro@gmail.com")]
+        public void EditUnavailableMemberData_NotFound(int id, string name, string gender, string phone, string job, string email)
+        {
+            _memberService = new MemberRepositoryServiceTest();
+            MemberController member = new MemberController(_memberService);
+            MemberDto bd = new MemberDto()
+            {
+                Id = id,
+                Name = name,
+                Gender = gender,
+                Phone = phone,
+                Occupation = job,
+                Email = email
+                
+            };
+            
+            var result  =member.EditMember(bd);
+            var response = result.Result as OkObjectResult;
+            Assert.True(response.StatusCode is 200);
+            // Assert.Equal(expected, result.Result.Name);
+        
+        }
+        
+        [Theory]
         [InlineData(1)]
         [InlineData(3)]
-        public void DeleteMemberData_RowOfData(int id)
+        public void DeleteAvailableMemberData_RowOfData(int id)
+        {
+       
+            _memberService = new MemberRepositoryServiceTest();
+            MemberController member = new MemberController(_memberService);
+            var result  =member.DeleteMember(id);
+            var response = result.Result.Result as OkObjectResult;
+            Assert.True(response.StatusCode is 200);
+            // Assert.Equal(id, result.Result.Id);
+
+        }
+        [Theory]
+        [InlineData(7)]
+        [InlineData(9)]
+        public void DeleteUnavailableMemberData_NotFound(int id)
         {
        
             _memberService = new MemberRepositoryServiceTest();

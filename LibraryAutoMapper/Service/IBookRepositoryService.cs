@@ -9,7 +9,7 @@ namespace LibraryAutoMapper.Service
     {
         public Task<List<BookDto>> GetBook();
         public Task<BookDto> GetBookById(int id);
-        public Task<BookDto> EditBook(BookDto bookDto);
+        public Task<bool> EditBook(BookDto bookDto);
         public Task<BookDto> AddBook(BookDto bookDto);
         public Task<bool> DeleteBook(int id);
         public bool BookExists(int id);

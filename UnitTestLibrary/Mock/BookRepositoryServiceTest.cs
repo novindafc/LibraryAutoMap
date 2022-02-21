@@ -23,17 +23,28 @@ namespace UnitTestLibrary.Mock
             return Task.FromResult(book);
         }
 
-        public Task<BookDto> EditBook(BookDto bookDto)
+        public Task<bool> EditBook(BookDto bookDto)
         {
             List<BookDto> data = GetData();
-            BookDto book = data.SingleOrDefault(x=>x.Id==bookDto.Id);
-            book.Id = bookDto.Id;
-            book.Title = bookDto.Title;
-            book.Author = bookDto.Author;
-            book.Position = bookDto.Position;
-            book.Qty = bookDto.Qty;
-            book.Remains = bookDto.Remains;
-            return Task.FromResult(bookDto);
+            try
+            {
+                BookDto book = data.SingleOrDefault(x => x.Id == bookDto.Id);
+                book.Id = bookDto.Id;
+                book.Title = bookDto.Title;
+                book.Author = bookDto.Author;
+                book.Position = bookDto.Position;
+                book.Qty = bookDto.Qty;
+                book.Remains = bookDto.Remains;
+            }
+            catch
+            {
+                
+                    Task.FromResult(false);
+                
+            }
+           
+           
+            return Task.FromResult(true);
         }
 
         public Task<BookDto> AddBook(BookDto bookDto)

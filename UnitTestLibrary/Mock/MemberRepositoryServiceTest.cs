@@ -22,17 +22,21 @@ namespace UnitTestLibrary.Mock
             return Task.FromResult(member);
         }
 
-        public Task<MemberDto> EditMember(MemberDto memberDto)
+        public Task<bool> EditMember(MemberDto memberDto)
         {
             List<MemberDto> data = GetData();
             MemberDto member = data.SingleOrDefault(x=>x.Id == memberDto.Id);
+            if (member == null)
+            {
+                return Task.FromResult(false);
+            }
             member.Id = memberDto.Id;
             member.Name = memberDto.Name;
             member.Gender = memberDto.Gender;
             member.Phone = memberDto.Phone;
             member.Occupation = memberDto.Occupation;
             member.Email = memberDto.Email;
-            return Task.FromResult(memberDto);
+            return Task.FromResult(true);
         }
 
         public Task<MemberDto> AddMember(MemberDto memberDto)

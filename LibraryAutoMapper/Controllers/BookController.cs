@@ -47,9 +47,9 @@ namespace LibraryAutoMapper.Controllers
 
             if (result == null)
             {
-                return new JsonResult(new {
+                return Ok(new JsonResult(new {
                     status = "Not Found"
-                });
+                }));
             }
 
             return Ok(new JsonResult(new {
@@ -63,18 +63,18 @@ namespace LibraryAutoMapper.Controllers
         public async Task<IActionResult> EditBook(BookDto bookDto)
         { 
             var result =  await _bookRepository.EditBook(bookDto);
-            if (result==null)
+            if (result==false)
             {
-                return new JsonResult(new
+                return Ok(new JsonResult(new
                     {
                         status = "Not Found",
-                    });
+                    }));
             }
 
             return Ok(new JsonResult(new
             {
                 status = "success",
-                data = result
+                data = bookDto
             }));
         }
 
@@ -103,10 +103,10 @@ namespace LibraryAutoMapper.Controllers
             bool result = await _bookRepository.DeleteBook(id);
             if (result == false)
             {
-                return new JsonResult(new
+                return Ok(new JsonResult(new
                 {
                     status = "Not Found"
-                });
+                }));
             }
 
             return Ok(new JsonResult(new

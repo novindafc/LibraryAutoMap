@@ -198,20 +198,20 @@ namespace LibraryAutoMapper.Controllers
         public async Task<IActionResult> EditBookLog(BookLogDto booklogDto)
         {
             var booklog = await _booklogRepository.EditBookLog(booklogDto);
-            if (booklog == null)
+            if (booklog == false)
             {
-                Response.StatusCode = StatusCodes.Status404NotFound;
-                return new JsonResult(new
+                // Response.StatusCode = StatusCodes.Status404NotFound;
+                return Ok(new JsonResult(new
                 {
-                    status = "Not Found",
-                });
+                    status = "Not Found"
+                }));
                     
             }
             
             return Ok(new JsonResult(new
             {
                 status = "success",
-                data = booklog
+                data = booklogDto
             }));
         }
         
@@ -224,8 +224,7 @@ namespace LibraryAutoMapper.Controllers
         public async Task<ActionResult> AddBookLog(BookLogDto booklogDto)
         {
             bool booklog = await _booklogRepository.AddBookLog(booklogDto);
-           
-
+            
             if (booklog == false)
             {
                 return new JsonResult(new {
@@ -250,9 +249,9 @@ namespace LibraryAutoMapper.Controllers
             bool booklog = await _booklogRepository.DeleteBookLog(id);
             if (booklog == false)
             {
-                return new JsonResult(new {
+                return Ok(new JsonResult(new {
                     status = "Not Found"
-                });
+                }));
             }
 
             return Ok(new JsonResult(new {

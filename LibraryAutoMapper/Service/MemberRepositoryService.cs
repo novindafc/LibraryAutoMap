@@ -39,13 +39,17 @@ namespace LibraryAutoMapper.Service
         }
         
         
-        public async Task<MemberDto> EditMember(MemberDto memberDto)
+        public async Task<bool> EditMember(MemberDto memberDto)
         {
             int id = memberDto.Id;
 
-            _context.Entry(_mapper.Map<Member>(memberDto)).State = EntityState.Modified;
+            var result = _context.Entry(_mapper.Map<Member>(memberDto)).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            return memberDto;
+            if (result == null)
+            {
+                return false;
+            }
+            return true;
         }
 
         

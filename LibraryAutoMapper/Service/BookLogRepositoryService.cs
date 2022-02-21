@@ -43,12 +43,16 @@ namespace LibraryAutoMapper.Service
             
         }
         
-        public async Task<BookLogDto> EditBookLog(BookLogDto booklogDto)
+        public async Task<bool> EditBookLog(BookLogDto booklogDto)
         {
             int id = booklogDto.Id;
-            _context.Entry(_mapper.Map<BookLog>(booklogDto)).State = EntityState.Modified;
+            var booklog = _context.Entry(_mapper.Map<BookLog>(booklogDto)).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            return booklogDto;
+            if (booklog == null)
+            {
+                return false;
+            }
+            return true;
         }
         
         

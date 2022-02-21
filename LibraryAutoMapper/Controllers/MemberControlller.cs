@@ -48,9 +48,9 @@ namespace LibraryAutoMapper.Controllers
 
             if (member == null)
             {
-                return new JsonResult(new {
+                return Ok(new JsonResult(new {
                     status = "Not Found"
-                });
+                }));
             }
 
             return Ok(new JsonResult(new {
@@ -65,13 +65,13 @@ namespace LibraryAutoMapper.Controllers
         {
             int id = memberDto.Id;
             var member = await _memberRepository.EditMember(memberDto);
-            if (member == null)
+            if (member == false)
             {
-                Response.StatusCode = StatusCodes.Status404NotFound;
-                return new JsonResult(new
+                // Response.StatusCode = StatusCodes.Status404NotFound;
+                return Ok(new JsonResult(new
                 {
                     status = "Not Found",
-                });
+                }));
             }
 
             return Ok(new JsonResult(new
@@ -104,9 +104,9 @@ namespace LibraryAutoMapper.Controllers
             bool member = await _memberRepository.DeleteMember(id);
             if (member == false)
             {
-                return new JsonResult(new {
+                return Ok(new JsonResult(new {
                     status = "Not Found"
-                });
+                }));
             }
             return Ok(new JsonResult(new {
                 status = "delete success",

@@ -1,20 +1,33 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=90c961d9_002D8f3b_002D4b91_002Dbf80_002D195944a6dc4d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAllAvailableBookData_ListofModel" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\bimasakti\AppData\Local\JetBrains\Rider2021.3\resharper-host\temp\Rider\vAny\CoverageData\_LibraryAutoMapper.-1056053970\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3bf36d44_002D3de7_002D431c_002Da929_002D5d43d983c421/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="EditUnavailableMemberData_NotFound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.GetAllAvailableBookData_ListofModel&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.GetAllAvailableBookLogData_ListofModel&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.GetAllAvailableMemberLogData_ListofModel&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.GetAvailableBookDataById_RowOfData&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.AddBookData_RowOfData&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.AddBookData_RowidOfData&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.AddBookLogData_RowOfData&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.AddMemberData_RowOfData&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.GetAvailableBookLogDataById_RowOfData&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.GetAvailableMemberLogDataById_RowOfData&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.EditBookData_RowOfData&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.EditUnavailableMemberData_NotFound&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a181e666_002D81b3_002D49f5_002D923c_002D1ce894076144/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="EditBookData_RowOfData" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4a2840ce_002D1dfb_002D4c0e_002Dbb0b_002D149406eb592f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="EditUnavailableBookData_NotFound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.EditUnavailableBookData_NotFound&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6b53039a_002D74e1_002D4ee1_002D853b_002De5b6df5e3a20/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetUnavailableBookDataById_NotFound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.GetUnavailableBookDataById_NotFound&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=90dd324f_002D2e0e_002D4607_002Db39f_002D83a95680998d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="EditUnavailableBookLogData_NotFound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.EditUnavailableBookLogData_NotFound&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=93ec7679_002D337f_002D4261_002D9aed_002Dae93026475c7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAllAvailableBookData_ListofModel #6" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a181e666_002D81b3_002D49f5_002D923c_002D1ce894076144/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="EditBookData_RowOfData" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
@@ -24,9 +37,24 @@
     &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.GetAllAvailableBookData_ListofModel&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b8621c32_002D182b_002D45bb_002D8c87_002D7ad6b53a23c0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetUnavailableBookLogDataById_RowOfData" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c912cb2f_002D665d_002D44b8_002Dad1c_002Daa567f80bba5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="EditUnavailableBookData_NotFound #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c9ab6338_002Dfd09_002D48d7_002D80d3_002D305ef8050fd0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetAllAvailableBookData_ListofModel #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest.GetAllAvailableBookData_ListofModel&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ca05e2f8_002D6dce_002D4625_002D88b1_002D5056a489084f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UnitTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::747841F2-BBEC-45AD-8C43-2D0F4F2DFA8A::.NETCoreApp,Version=v3.1::UnitTestLibrary.UnitTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
